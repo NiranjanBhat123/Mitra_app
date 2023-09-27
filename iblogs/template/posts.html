@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}POST{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col s12 m10" style="margin: 20px; border: 1px solid #ccc; padding: 10px;">
+        <h3 style="color: #333; font-family: 'Arial', sans-serif; text-align:center">{{ post.title }}</h3>
+        <p style="color: #666; text-align:center">({{ post.cat.title }})</p>
+        <img style="height:30rem;width:auto;margin-left:12rem" src="/media/{{ post.image }}" class="responsive-img" alt="">
+        <br>
+        <p style="font-size: 16px; line-height: 1.5; color: #444; text-align:center">
+            {{ post.content|safe }}
+        </p>
+    </div>
+</div>
+{% endblock %}

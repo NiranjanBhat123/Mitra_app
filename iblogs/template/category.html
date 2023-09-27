@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to Mitra{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    h3 {
+        margin: 20px;
+        padding: 10px;
+        
+        background-color:  #477091;
+        color: #fff;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .collection {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .collection-item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+        color: #333;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.2s ease;
+    }
+
+    .collection-item:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<h3>{{ cat.title }}</h3>
+<div class="collection">
+    {% for p in posts %}
+    <a href="/blog/{{ p.url }}" class="collection-item">{{ p.title }}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+
