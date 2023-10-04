@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}teachers{% endblock %}
+
+{% block content %}
+
+<h3 style="text-align: center;">ನಮ್ಮ ಶಿಕ್ಷಕರು</h3>
+<div class="container">
+    <div class="row">
+        <div class="col s12 ">
+            <div class="row">
+                <div class="col">
+                    {% for t in teachers %}
+                    <div class="col s12 m4">
+                        
+                        <div class="card" style="width: 250px; height: 350px; border-radius:1rem;">
+                            <div style="display: flex;align-items:center;justify-content:center;">
+                            <div class="card-image">
+                                <img src="/media/{{ t.image }}" style="height: 150px; width: 150px;border-radius:1rem;margin-top:1rem;" class="responsive-img" alt="">
+                            </div>
+                        </div>
+                            <div class="card-content">
+                                <span class="card-title" style="text-align: center;font-size:1rem;font-weight:bold; color:#477091;">{{ t.name }}</span>
+                                <span class="card-title" style="text-align: center;font-size:1rem;font-weight:500;">{{ t.role }}</span>
+                                <span class="card-title" style="text-align: center;font-size:1rem">{{ t.phone_number }}</span>
+                                <span class="card-title" style="text-align: center;font-size:1rem">{{ t.email }}</span>
+                                
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+                
+                    {% endfor %}
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

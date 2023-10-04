@@ -1,25 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}POST{% endblock %}
+{% block title %}Updates{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="col s12 m10" style="margin: 20px; border: 1px solid #ccc; padding: 10px;">
-        <h3 style="color: #333; font-family: 'Arial', sans-serif; text-align:center">{{ post.title }}</h3>
-        <p style="color: #666; text-align:center">({{ post.cat.title }})</p>
+        <h3 style="color: #333; font-family: 'Arial', sans-serif; text-align:center">{{ up.title }}</h3>
+
         <div style="display: flex;align-items:center;justify-content:center">
-            <img style="height:30rem;" src="/media/{{ post.image }}" class="responsive-img" alt="">
-        </div>
+        <img style="height:30rem;" src="/media/{{ up.image }}" class="responsive-img" alt=""></div>
         <br>
         <p style="font-size: 16px; line-height: 1.5; color: #444; text-align:center">
-            {{ post.content|safe }}
+            {{ up.description}}
         </p>
-        
     </div>
-
 </div>
-
-
-
-
 {% endblock %}
